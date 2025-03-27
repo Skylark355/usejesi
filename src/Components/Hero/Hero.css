@@ -12,6 +12,61 @@
   width: 60%;
 }
 
+.txt {
+  display: flex;
+  /* align-items: center; */
+}
+
+.txt .static-txt {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.txt .dynamic-txt {
+  margin-left: 1rem;
+  line-height: 40px;
+  height: 40px;
+  overflow: hidden;
+  /* background-color: black; */
+}
+
+.dynamic-txt li {
+  list-style: none;
+  color: #ff7900;
+  font-size: 2rem;
+  font-weight: 600;
+  top: 0;
+  position: relative;
+  animation: slide 12s steps(4) infinite;
+}
+
+@keyframes slide {
+  100% {
+    top: -320px;
+  }
+}
+
+.dynamic-txt li::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-left: 2px solid black;
+  left: 0;
+  animation: typing 3s steps(18) infinite;
+}
+
+@keyframes typing {
+  40%,
+  60% {
+    left: calc(100% + 30px);
+  }
+  100% {
+    left: 0;
+  }
+}
+
 .hero-left h1 {
   width: 90%;
   font-size: 2.5rem;
@@ -74,6 +129,7 @@
 
 .hero-right img {
   height: 30rem;
+  animation: bounce 1s infinite ease-in-out;
 }
 
 /* media quries  */
@@ -225,101 +281,99 @@
   }
 }
 
-
 @media (min-width: 1025px) and (max-width: 1280px) {
-    .hero {
-      /* flex-direction: column; */
-      padding: 1rem 3rem;
-    }
-  
-    .hero-left {
-      width: 100%;
-    }
-  
-    .hero-left h1 {
-      width: 85%;
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
-  
-    .hero-left h5 {
-      font-size: 1rem;
-      font-weight: 300;
-      line-height: 1.5rem;
-      margin-bottom: 2rem;
-    }
-  
-    .check {
-      position: absolute;
-    }
-  
-    .mark {
-      font-size: 0.5rem;
-      color: white;
-    }
-  
-    .hero-left-item p {
-      position: relative;
-      margin-left: 1.8rem;
-      font-size: 1rem;
-    }
-  
-    .hero-left-cta {
-      margin-top: 2rem;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-    }
-  
-    .hero-right img {
-      height: 24rem;
-    }
+  .hero {
+    /* flex-direction: column; */
+    padding: 1rem 3rem;
   }
 
-  @media (min-width: 1281px) {
-    .hero {
-        padding: 1rem 4rem;
-      }
-    
-      .hero-left {
-        width: 55%;
-      }
-    
-      .hero-left h1 {
-        width: 70%;
-        font-size: 2rem;
-        margin-bottom: 2rem;
-      }
-    
-      .hero-left h5 {
-        font-size: 1.2rem;
-        font-weight: 500;
-        line-height: 1.5rem;
-        margin-bottom: 2rem;
-      }
-    
-      .check {
-        position: absolute;
-      }
-    
-      .mark {
-        font-size: 0.5rem;
-        color: white;
-      }
-    
-      .hero-left-item p {
-        position: relative;
-        margin-left: 1.8rem;
-        font-size: 1.1rem;
-      }
-    
-      .hero-left-cta {
-        margin-top: 2rem;
-        padding: 0.7rem 1.2rem;
-        font-size: 0.8rem;
-      }
-    
-      .hero-right img {
-        height: 30rem;
-      }
+  .hero-left {
+    width: 100%;
+  }
 
-    }
+  .hero-left h1 {
+    width: 85%;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-left h5 {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .check {
+    position: absolute;
+  }
+
+  .mark {
+    font-size: 0.5rem;
+    color: white;
+  }
+
+  .hero-left-item p {
+    position: relative;
+    margin-left: 1.8rem;
+    font-size: 1rem;
+  }
+
+  .hero-left-cta {
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  .hero-right img {
+    height: 24rem;
+  }
+}
+
+@media (min-width: 1281px) {
+  .hero {
+    padding: 1rem 4rem;
+  }
+
+  .hero-left {
+    width: 55%;
+  }
+
+  .hero-left h1 {
+    width: 70%;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-left h5 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .check {
+    position: absolute;
+  }
+
+  .mark {
+    font-size: 0.5rem;
+    color: white;
+  }
+
+  .hero-left-item p {
+    position: relative;
+    margin-left: 1.8rem;
+    font-size: 1.1rem;
+  }
+
+  .hero-left-cta {
+    margin-top: 2rem;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.8rem;
+  }
+
+  .hero-right img {
+    height: 30rem;
+  }
+}
