@@ -1,0 +1,158 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+  font-size: 1.1rem;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+  z-index: 1111;
+}
+
+.navbar-logo img {
+  height: 3.5rem;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 3rem;
+}
+
+.nav-links ul a {
+  font-weight: 500;
+}
+
+.navbar .active {
+  color: #ff7900;
+  font-weight: 900;
+}
+
+/* media queries */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .navbar {
+    width: 100%;
+    padding: 1rem 2rem;
+    justify-content: flex-start;
+  }
+
+  .navbar-logo img {
+    height: 3.3rem;
+    margin-left: 5rem;
+  }
+
+  .hamburger {
+    font-size: 1.3rem;
+    color: #ff7900;
+    border: 2px solid #ff7900;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    transform: translateX(150%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* When menu is open */
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .navbar {
+    width: 100%;
+    padding: 1rem 3rem;
+  }
+
+  .navbar-logo img {
+    height: 3.5rem;
+  }
+
+  .hamburger {
+    font-size: 1.3rem;
+    color: #ff7900;
+    border: 2px solid #ff7900;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    transform: translateX(150%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  /* When menu is open */
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hamburger {
+    display: none;
+  }
+
+  
+  .navbar {
+    width: 100%;
+    padding: 1rem 3rem;
+  }
+
+  .navbar-logo img {
+    height: 3.5rem;
+  }
+
+  .nav-menu a{
+    font-size: 0.9rem;
+  }
+ 
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .hamburger {
+    display: none;
+  }
+
+}
+
+@media (min-width: 1281px) {
+  .hamburger {
+    display: none;
+  }
+}
